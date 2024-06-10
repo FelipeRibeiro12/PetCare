@@ -8,7 +8,9 @@ class Router:
         Routes.INDEX_PAGE.value: pages.HomePage,
         Routes.HOME_PAGE.value: pages.HomePage,
         Routes.DOG_PAGE.value: pages.DogPage,
-       # Routes.CHATBOT_PAGE.value: pages.ChatBotPage,
+        Routes.CAT_PAGE.value: pages.CatPage,
+        Routes.BIRD_PAGE.value: pages.BirdPage,
+        Routes.CHATBOT_PAGE.value: pages.ChatBotPage,
     }
 
     def __init__(self, page: ft.Page) -> None:
