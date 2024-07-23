@@ -1,9 +1,14 @@
+import os
+import time
+import openai
+import threading
 import flet as ft
 
+from openai import OpenAI
+from .constants import OPEN_AI_API_KEY
 from components import SystemMessage, UserMessage, InputTextField
 from navigation.routes import Routes
 from styles import colors
-
 
 class ChatBotPage:
     def __init__(self, page: ft.Page):
@@ -51,7 +56,7 @@ class ChatBotPage:
             height=600,
             padding=20,
             controls=[
-                SystemMessage("Olá, como eu posso te ajudar hoje?").get_content(),
+                SystemMessage("Olá! Como eu posso te ajudar?").get_content(),
             ],
         )
 
@@ -78,18 +83,41 @@ class ChatBotPage:
 
     def _handle_back_button(self, event: ft.ControlEvent):
         self._page.go(Routes.HOME_PAGE.value)
+        
+    def _show_typing_indicator(self):
+        time.sleep(1)
+        waiting_message = SystemMessage("...").get_content()
+        self._chat_history.controls.append(waiting_message)
+        self._chat_history.update()
 
     def _handle_send_message(self, event: ft.ControlEvent):
-        input = self._input_field.value
-        if not input:
+        input_text = self._input_field.value
+        if not input_text:
             return
 
         self._input_field.value = ""
         self._input_field.update()
 
-        message = UserMessage(input).get_content()
-
-        self._chat_history.controls.append(message)
+        user_message = UserMessage(input_text).get_content()
+        self._chat_history.controls.append(user_message)
+        self._chat_history.update()
+        
+        waiting_message = SystemMessage("...").get_content()
+        self._chat_history.controls.append(waiting_message)
         self._chat_history.update()
 
-        # TODO: SEND MESSAGE TO BA
+        client = OpenAI(api_key=OPEN_AI_API_KEY)
+        messages = [
+            {"role": "system", "content": "Você é um chatbot se passando por uma veterinária, que deverá responder como uma pessoa e auxiliar o usuário com suas duvidas a respeito de animais e pets. Tudo que não for a respeito de animais e pets, você deverá respoder que não sabe sobre o assunto."},
+            {"role": "user", "content": input_text},
+        ]
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+        )
+
+        response_text = completion.choices[0].message.content
+        response_message = SystemMessage(response_text).get_content()
+        self._chat_history.controls.append(response_message)
+        self._chat_history.controls.remove(waiting_message)
+        self._chat_history.update()
