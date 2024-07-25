@@ -11,10 +11,11 @@ class BirdPage:
         self._page.appbar = ft.AppBar(
             ft.IconButton(
                 ft.icons.ARROW_BACK,
+                icon_color=colors.black,
                 on_click=self._handle_back_button,
             ),
-            title=ft.Text("PASSAROS", style=ft.TextStyle(color=colors.white, size=24)),
-            bgcolor=colors.primary_color,
+            title=ft.Text("AVES", style=ft.TextStyle(color=colors.black, size=24)),
+            bgcolor=colors.white,
             center_title=True,
             toolbar_height=80,
         )
@@ -42,54 +43,111 @@ class BirdPage:
             controls=[
                 ft.ElevatedButton(
                     content=ft.Row(
-                        alignment=ft.MainAxisAlignment.CENTER,
                         controls=[
-                            ft.Text("Ave1", weight=ft.FontWeight.BOLD, size=20),
-                        ]
-                    ),
-                    width=self._page.width,
-                    height=100,
-                    style=birds_button_style,
-                    #on_click=self._handle_dogs_button,
+                            ft.Image(
+                                src="calopsita.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Calopsita", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
                 ),
                 ft.ElevatedButton(
-                    content=ft.Column(
-                        alignment=ft.MainAxisAlignment.CENTER,
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    content=ft.Row(
                         controls=[
-                            ft.Text("Ave2", weight=ft.FontWeight.BOLD, size=20),
-                        ]
-                    ),
-                    width=self._page.width,
-                    height=100,
-                    style=birds_button_style,
-                    #on_click=self._handle_dogs_button,
+                            ft.Image(
+                                src="nf.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
                 ),
                 ft.ElevatedButton(
-                    content=ft.Column(
-                        alignment=ft.MainAxisAlignment.CENTER,
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    content=ft.Row(
                         controls=[
-                            ft.Text("Ave3", weight=ft.FontWeight.BOLD, size=20),
-                        ]
-                    ),
-                    width=self._page.width,
-                    height=100,
-                    style=birds_button_style,
-                    #on_click=self._handle_dogs_button,
+                            ft.Image(
+                                src="nf.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
                 ),
                 ft.ElevatedButton(
-                    content=ft.Column(
-                        alignment=ft.MainAxisAlignment.CENTER,
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    content=ft.Row(
                         controls=[
-                            ft.Text("Ave4", weight=ft.FontWeight.BOLD, size=20),
-                        ]
-                    ),
-                    width=self._page.width,
-                    height=100,
-                    style=birds_button_style,
-                    #on_click=self._handle_dogs_button,
+                            ft.Image(
+                                src="nf.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
+                ),
+                ft.ElevatedButton(
+                    content=ft.Row(
+                        controls=[
+                            ft.Image(
+                                src="nf.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
+                ),
+                ft.ElevatedButton(
+                    content=ft.Row(
+                        controls=[
+                            ft.Image(
+                                src="nf.png", 
+                                height=100,
+                                fit=ft.ImageFit.COVER,
+                            ),
+                            ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                width=self._page.width,
+                height=100,
+                style=birds_button_style,
+                #on_click=self._handle_dogs_button,
                 ),
             ]
         )
