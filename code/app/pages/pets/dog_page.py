@@ -51,14 +51,13 @@ class DogPage:
                             ),
                             ft.Text("Pastor Alemão", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_dog1_button,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -70,14 +69,13 @@ class DogPage:
                             ),
                             ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -89,14 +87,13 @@ class DogPage:
                             ),
                             ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -108,14 +105,13 @@ class DogPage:
                             ),
                             ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -127,14 +123,13 @@ class DogPage:
                             ),
                             ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -146,14 +141,13 @@ class DogPage:
                             ),
                             ft.Text("Vazio", weight=ft.FontWeight.BOLD, size=20),
                     ],
-                    alignment=ft.CrossAxisAlignment.CENTER,  # Center the children vertically
+                    alignment=ft.CrossAxisAlignment.CENTER,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                    #horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
                 width=self._page.width,
                 height=100,
                 style=dogs_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
             ]
         )
@@ -168,3 +162,9 @@ class DogPage:
     
     def _handle_back_button(self, event: ft.ControlEvent):
         self._page.go(Routes.HOME_PAGE.value)
+        
+    def _handle_dog1_button(self, event: ft.ControlEvent):
+        self._page.go(Routes.DOG1_PAGE.value)
+        
+    def _handle_error(self, event: ft.ControlEvent):
+        self._page.go(Routes.ERROR_PAGE.value)

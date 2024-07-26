@@ -58,6 +58,7 @@ class ChatBotPage:
             controls=[
                 SystemMessage("Olá! Como eu posso te ajudar?").get_content(),
             ],
+            auto_scroll=True,
         )
 
         return ft.Column(

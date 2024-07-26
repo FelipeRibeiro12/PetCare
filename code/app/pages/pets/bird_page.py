@@ -57,7 +57,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_birds_button,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -75,7 +75,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -93,7 +93,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -111,7 +111,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -129,7 +129,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
                 ft.ElevatedButton(
                     content=ft.Row(
@@ -147,7 +147,7 @@ class BirdPage:
                 width=self._page.width,
                 height=100,
                 style=birds_button_style,
-                #on_click=self._handle_dogs_button,
+                on_click=self._handle_error,
                 ),
             ]
         )
@@ -162,3 +162,9 @@ class BirdPage:
     
     def _handle_back_button(self, event: ft.ControlEvent):
         self._page.go(Routes.HOME_PAGE.value)
+        
+    def _handle_bird1_button(self, event: ft.ControlEvent):
+        self._page.go(Routes.BIRD1_PAGE.value)
+        
+    def _handle_error(self, event: ft.ControlEvent):
+        self._page.go(Routes.ERROR_PAGE.value)

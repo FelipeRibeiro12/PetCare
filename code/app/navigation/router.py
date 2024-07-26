@@ -7,10 +7,14 @@ class Router:
     routes_map = {
         Routes.INDEX_PAGE.value: pages.HomePage,
         Routes.HOME_PAGE.value: pages.HomePage,
+        Routes.ERROR_PAGE.value: pages.ErrorPage,
+        Routes.CHATBOT_PAGE.value: pages.ChatBotPage,
         Routes.DOG_PAGE.value: pages.DogPage,
         Routes.CAT_PAGE.value: pages.CatPage,
         Routes.BIRD_PAGE.value: pages.BirdPage,
-        Routes.CHATBOT_PAGE.value: pages.ChatBotPage,
+        Routes.DOG1_PAGE.value: pages.Dog1Page,
+        Routes.CAT1_PAGE.value: pages.Cat1Page,
+        Routes.BIRD1_PAGE.value: pages.Bird1Page,
     }
 
     def __init__(self, page: ft.Page) -> None:

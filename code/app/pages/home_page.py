@@ -43,7 +43,6 @@ class HomePage:
         )
 
     def _get_content2(self):
-
         dogs_button_style = ft.ButtonStyle(
             shape=ft.RoundedRectangleBorder(radius=10),
             color=colors.black,
